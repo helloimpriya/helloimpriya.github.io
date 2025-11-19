@@ -38,7 +38,5 @@ I update this space regularly as I grow in frontend development.
 - Contact section  
 - Clean UI + soft interactions  
 
----
 
-## 📁 Folder Structure
 
