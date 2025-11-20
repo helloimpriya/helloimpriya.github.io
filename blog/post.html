@@ -3,76 +3,183 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Blog Post</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priya — Blog Post</title>
 
+  <!-- Portfolio CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
 
-
   <style>
-    /* Optional tiny styling */
-    .blog-post-container {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 20px;
+    .post-wrapper {
+      padding: 20px 30px;
+      animation: fadeIn 0.4s ease;
     }
 
-    .blog-post-title {
-      font-size: 2rem;
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      background: var(--bg-oxford-blue-1);
+      color: var(--text-white);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      border: 1px solid var(--border-prussian-blue);
+      transition: 0.2s;
+    }
+
+    .back-btn:hover {
+      background: var(--bg-oxford-blue-2);
+    }
+
+    .post-title {
+      font-size: 28px;
       margin-bottom: 10px;
+      color: var(--text-white);
     }
 
-    .blog-post-image {
+    .post-date {
+      opacity: 0.7;
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .post-image {
       width: 100%;
-      border-radius: 10px;
-      margin: 20px 0;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .post-content {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-white);
+      white-space: pre-line;
     }
 
     .comments-section {
-      margin-top: 40px;
+      margin-top: 50px;
+    }
+
+    .comments-section h2 {
+      margin-bottom: 10px;
     }
 
     .comment-item {
-      background: #f3f3f3;
-      padding: 12px;
+      background: var(--bg-oxford-blue-2);
+      padding: 12px 15px;
       border-radius: 8px;
       margin-bottom: 10px;
+      border: 1px solid var(--border-prussian-blue);
+    }
+
+    .comment-form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      background: var(--bg-oxford-blue-1);
+      border: 1px solid var(--border-prussian-blue);
+      padding: 10px;
+      border-radius: 6px;
+      color: var(--text-white);
+    }
+
+    .comment-form button {
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      background: var(--bg-oxford-blue-2);
+      color: var(--text-white);
+      cursor: pointer;
     }
   </style>
 </head>
 
 <body>
 
-  <article class="blog-post-container">
+  <main>
 
-    <h1 class="blog-post-title">Loading...</h1>
+    <!-- SIDEBAR (copied from your index.html) -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="/assets/images/avatar.png" alt="Priya avatar">
+        </figure>
 
-    <div class="blog-post-meta">
-      <time class="blog-post-date"></time>
-      <p class="likes-count"></p>
-    </div>
+        <div class="info-content">
+          <h1 class="name" title="Priyadharshini">Priyadharshini</h1>
+          <p class="title">Frontend Developer</p>
+        </div>
 
-    <img class="blog-post-image" src="" alt="Blog image">
-
-    <p class="blog-post-content"></p>
-
-    <hr>
-
-    <!-- Comments -->
-    <section class="comments-section">
-      <h2>Comments</h2>
-
-      <div class="comments-list"></div>
-
-      <div class="comment-form">
-        <input type="text" id="username" placeholder="Your name">
-        <textarea id="commentText" placeholder="Write a comment..."></textarea>
-        <button id="submitComment">Post Comment</button>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+        </button>
       </div>
-    </section>
 
-  </article>
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
 
-  <script type="module" src="../assets/js/single-post.js"></script>
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:priyaloves7@gmail.com" class="contact-link">priyaloves7@gmail.com</a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="separator"></div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+      <!-- NAVIGATION (copied from your index.html) -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a href="/" class="navbar-link">About</a></li>
+          <li class="navbar-item"><a href="/index.html#blog" class="navbar-link active">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- BLOG POST CONTENT -->
+      <article class="post-wrapper">
+
+        <a href="/index.html#blog" class="back-btn">← Back to Blog</a>
+
+        <h1 class="post-title">Loading...</h1>
+        <span class="post-date"></span>
+
+        <img class="post-image" src="" alt="Blog Image">
+
+        <p class="post-content"></p>
+
+        <section class="comments-section">
+          <h2>Comments</h2>
+
+          <div class="comments-list"></div>
+
+          <div class="comment-form">
+            <input type="text" id="username" placeholder="Your name">
+            <textarea id="commentText" placeholder="Write a comment..."></textarea>
+            <button id="submitComment">Post Comment</button>
+          </div>
+        </section>
+
+      </article>
+
+    </div>
+  </main>
+
+  <script type="module" src="/assets/js/single-post.js"></script>
+
 </body>
 
 </html>
