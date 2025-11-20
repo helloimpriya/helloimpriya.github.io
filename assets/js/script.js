@@ -149,8 +149,11 @@ navigationLinks.forEach(link => {
         page.classList.remove("active");
       }
     });
+    console.log("Clicked nav:", targetPage);
+
     if (targetPage === "blog") {
       loadBlogPosts();
+
     }
 
     navigationLinks.forEach(nav => nav.classList.remove("active"));
@@ -187,15 +190,21 @@ const db = getFirestore(app);
 // BLOG LIST AUTO-FILL
 const blogList = document.querySelector(".blog-posts-list");
 function loadBlogPosts() {
+  console.log("loadBlogPosts() triggered");
   const blogList = document.querySelector(".blog-posts-list");
   if (blogList) {
+    console.log("blogList element:", blogList);
     const postsRef = collection(db, "posts");
     const postsQuery = query(postsRef, orderBy("date", "desc"));
 
     onSnapshot(postsQuery, (snapshot) => {
+      console.log("Firebase returned posts:", snapshot.docs.length);
+
       blogList.innerHTML = "";
 
       snapshot.forEach((doc) => {
+        console.log("Post loaded:", doc.data());
+
         const post = doc.data();
 
         const li = document.createElement("li");
