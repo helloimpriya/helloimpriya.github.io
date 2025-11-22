@@ -141,25 +141,29 @@ navigationLinks.forEach(link => {
   link.addEventListener("click", () => {
 
     const targetPage = link.textContent.trim().toLowerCase();
+    
+    console.log("🔍 Clicked nav:", targetPage);
+    console.log("📄 Available pages:", Array.from(pages).map(p => p.dataset.page));
 
     pages.forEach(page => {
       if (page.dataset.page === targetPage) {
+        console.log("✅ Found matching page:", targetPage);
         page.classList.add("active");
       } else {
         page.classList.remove("active");
       }
     });
-    console.log("Clicked nav:", targetPage);
-
-    if (targetPage === "blog") {
-      loadBlogPosts();
-
-    }
 
     navigationLinks.forEach(nav => nav.classList.remove("active"));
     link.classList.add("active");
 
     window.scrollTo(0, 0);
+
+    // Load blog posts when blog is clicked
+    if (targetPage === "blog") {
+      console.log("📝 Loading blog posts...");
+      loadBlogPosts();
+    }
   });
 });
 

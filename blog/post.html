@@ -10,8 +10,6 @@
   <!--- favicon-->
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 
-
-
   <!--- css link-->
   <link rel="stylesheet" href="/assets/css/style.css">
 
@@ -141,7 +139,6 @@
 
         </ul>
 
-
       </div>
 
     </aside>
@@ -149,9 +146,7 @@
     <!-- MAIN CONTENT -->
     <div class="main-content">
 
-      <!-- NAVIGATION (copied from your index.html) -->
-      <!--- #NAVBAR-->
-
+      <!-- NAVIGATION -->
       <nav class="navbar">
         <ul class="navbar-list">
 
@@ -174,7 +169,6 @@
         </ul>
       </nav>
 
-
       <!-- BLOG POST CONTENT -->
       <article class="post-wrapper">
 
@@ -183,7 +177,22 @@
         <h1 class="post-title">Loading...</h1>
         <span class="post-date"></span>
 
+        <div class="post-extras">
+          <span class="reading-time"></span>
+
+          <button class="share-btn">
+            <ion-icon name="share-outline"></ion-icon> Share
+          </button>
+        </div>
+
+
         <img class="post-image" src="" alt="Blog Image">
+
+        <!-- Likes Button -->
+        <button class="likes-button" id="likesButton">
+          <ion-icon name="heart-outline"></ion-icon>
+          <span class="likes-count">0 likes</span>
+        </button>
 
         <p class="post-content"></p>
 
@@ -208,6 +217,7 @@
   <!--- ionicon link -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
 
 </html>
